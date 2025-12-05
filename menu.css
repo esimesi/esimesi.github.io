@@ -1,4 +1,12 @@
 /* Filter bar navigation + arrows (cleaned) */
+.filter-instruction {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin: -0.5rem auto 0.5rem auto;
+  font-weight: 500;
+}
+
 .filter-bar-nav {
   position: sticky;
   top: 0;
@@ -128,6 +136,26 @@
 .filter-chip.active img {
   transform: scale(1.1);
 }
+
+/* Large screens: Increase filter bar size */
+@media (min-width: 1024px) {
+  .filter-bar {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+  .filter-chip {
+    min-width: 110px;
+    padding: 1rem 1.2rem;
+  }
+  .filter-chip img {
+    width: 48px;
+    height: 48px;
+  }
+  .filter-chip span {
+    font-size: 1.1rem;
+  }
+}
+
 @media (max-width: 700px) {
   .filter-bar {
     gap: 0.5rem;

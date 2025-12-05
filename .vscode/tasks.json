@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "append_css",
+			"type": "shell",
+			"command": "echo \"/* Filter instruction text */ .filter-instruction { text-align: center; font-size: 1rem; color: #555; margin: -0.5rem auto 0.5rem auto; font-weight: 500; }\" >> menu.css",
+			"args": [],
+			"group": "build"
+		}
+	]
+}
