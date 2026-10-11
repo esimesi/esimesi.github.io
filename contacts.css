@@ -487,6 +487,10 @@ body{
   z-index: 1;
 }
 
+#map .leaflet-tile-pane {
+  filter: grayscale(100%);
+}
+
 .map-cta {
   display: inline-block;
   margin-top: 15px;
@@ -689,5 +693,4 @@ body{
     font-size: 0.85rem;
   }
 }
-
 
