@@ -4,165 +4,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakta Pizzeria Tre Kronor i Vännäs — ring 093-51 23 35 eller besök oss på Östra Järnvägsgatan 3A. Se våra öppettider och hitta hit.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,900&display=swap" rel="stylesheet">
-  <link rel="icon" href="icons/logo.png" type="image/icon type">
-  <title>Tre kronor</title>
-  <!-- Leaflet CSS -->
+  <link rel="icon" href="icons/logo.png" type="image/png">
+  <title>Kontakt &amp; Beställ | Tre Kronor Pizzeria</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
-  <link rel="stylesheet" href="contacts.css">
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contacts.css">
 </head>
 
 <body>
-  <section class="showcase">
-    <header class="header">
-      <div class="logo">
-        <a href="index.html">
-          <img src="icons/logo.png" alt="Logo">
-        </a>
-      </div>
-      <div class="navigation">
-        <input class="toggle-menu" type="checkbox" id="toggle-menu">
-        <div class="hamburger-wrapper">
-          <label for="toggle-menu" class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </label>
-        </div>
-        <ul class="menu-header">
-          <li class="hamburger-wrapper-mobile">
-            <input class="toggle-menu" type="checkbox" id="toggle-menu-header">
-            <label for="toggle-menu-header" class="hamburger">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </label>
-          </li>        
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="icons/logo.png" alt="Tre Kronor Pizzeria logotyp" width="110" height="124">
+        <span class="brand-name">Tre Kronor</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Öppna meny">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Huvudmeny">
+        <ul>
           <li><a href="index.html">Hem</a></li>
           <li><a href="menu.html">Meny</a></li>
           <li><a href="contacts.html">Beställ</a></li>
           <li><a href="contacts.html">Kontakt</a></li>
         </ul>
-      </div>
-    </header>
-  </section>
-
-  <div class="container">
-    <!-- Main section: About Us and Contact+Map side by side -->
-    <div class="main-section">
-      <section class="about-us">
-        <div class="about-content">
-          <img src="pictures/owner.jpg" alt="About Us Image">
-          <div class="about-text">
-            <h2>Om oss</h2>
-            <p>
-              Välkommen till Pizzeria Tre Kronor, en älskad samlingsplats i hjärtat av Vännäs!
-              Pizzeria Tre Kronor har varit en viktig del av samhället i många år. Sedan 2019 har vi tagit över ledningen och fortsätter att servera utsökta pizzor, tillagade med omsorg och dedikation.
-            </p>
-            <p>
-              Vår passion är att erbjuda våra gäster delikata pizzor, varsamt tillagade med de bästa ingredienserna och en stor portion kärlek.
-              Vi gör alltid vårt yttersta för att ge våra gäster en minnesvärd upplevelse. Vi ser fram emot att välkomna dig till Pizzeria Tre Kronor.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <div class="contact-map-section">
-        <section class="contact-info">
-          <div class="info-wrapper">
-            <h2>Kontakt & Beställ</h2>
-            <div class="contact-cards">
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <img src="icons/telephone.png" alt="Telefon" />
-                </div>
-                <h3>Telefon</h3>
-                <div class="phone-container">
-                  <p><a href="tel:093512335">093-51 23 35</a></p>
-                </div>
-              </div>
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <img src="icons/adress.png" alt="Adress" />
-                </div>
-                <h3>Adress</h3>
-                <address>
-                  <p>Östra Järnvägsgatan 3A<br>911 32 Vännäs</p>
-                </address>
-              </div>
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <img src="icons/clock.png" alt="Öppettider" />
-                </div>
-                <h3>Öppettider</h3>
-                <div class="opening-hours">
-                  <p>Mån-Tors: 10:00 - 20:00</p>
-                  <p>Fre-Lör: 10:30 - 21:00</p>
-                  <p>Sön: 12:00 - 20:00</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="map-section">
-          <h2>Hitta oss</h2>
-          <div class="map-container">
-            <div id="map" aria-label="Karta till Tre Kronor Pizzeria"></div>
-            <a class="map-cta" href="https://www.google.com/maps?q=tre+kronor+pizza+v%C3%A4nn%C3%A4s" target="_blank" rel="noopener">Öppna i Kartor</a>
-          </div>
-        </section>
-      </div>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <!-- Leaflet JS -->
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin="">
-  </script>
-  
-  <script src="contacts.js"></script>
-  
-  <!-- Initialize Leaflet Map -->
-  <script>
-    (function initFooterMap() {
-      try {
-        var map = L.map('map', { 
-          zoomControl: true, 
-          scrollWheelZoom: false,
-          attributionControl: true
-        });
-        // Coordinates for Östra Järnvägsgatan 3A, Vännäs
-        var center = [63.905955, 19.7519];
-        map.setView(center, 16);
-        
-        // OpenStreetMap tiles do not require an API key.
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-        
-        // Create custom orange marker icon with logo
-        var orangeIcon = L.divIcon({
-          className: 'custom-marker',
-          html: '<div class="marker-pin"><div class="marker-logo"><img src="icons/logo.png" alt="Logo"></div></div>',
-          iconSize: [30, 40],
-          iconAnchor: [15, 40]
-        });
-        
-        var marker = L.marker(center, {icon: orangeIcon}).addTo(map);
-        marker.bindPopup('<div class="custom-popup"><strong>Tre Kronor Pizzeria</strong><br/>Östra Järnvägsgatan 3A, Vännäs</div>');
-      } catch (e) {
-        // If Leaflet fails, gracefully do nothing; the CTA link remains.
-        console.warn('Map init failed', e);
-      }
-    })();
-  </script>
+  <main class="contacts-main container">
+    <h1 class="page-heading">Om oss</h1>
+
+    <section class="about-card reveal">
+      <img src="pictures/owner.jpg" alt="Ägaren av Pizzeria Tre Kronor">
+      <div>
+        <p>
+          Välkommen till Pizzeria Tre Kronor, en älskad samlingsplats i hjärtat av Vännäs!
+          Pizzeria Tre Kronor har varit en viktig del av samhället i många år. Sedan 2019 har vi tagit över ledningen och fortsätter att servera utsökta pizzor, tillagade med omsorg och dedikation.
+        </p>
+        <p>
+          Vår passion är att erbjuda våra gäster delikata pizzor, varsamt tillagade med de bästa ingredienserna och en stor portion kärlek.
+          Vi gör alltid vårt yttersta för att ge våra gäster en minnesvärd upplevelse. Vi ser fram emot att välkomna dig till Pizzeria Tre Kronor.
+        </p>
+      </div>
+    </section>
+
+    <h2 class="page-heading">Kontakt &amp; beställ</h2>
+
+    <section class="contact-cards" aria-label="Kontaktuppgifter">
+      <div class="contact-card reveal">
+        <span class="icon-badge" aria-hidden="true"><img src="icons/telephone.png" alt=""></span>
+        <h3>Telefon</h3>
+        <p><a class="phone-link" href="tel:093512335">093-51 23 35</a></p>
+      </div>
+      <div class="contact-card reveal">
+        <span class="icon-badge" aria-hidden="true"><img src="icons/adress.png" alt=""></span>
+        <h3>Adress</h3>
+        <p>Östra Järnvägsgatan 3A<br>911 32 Vännäs</p>
+      </div>
+      <div class="contact-card reveal">
+        <span class="icon-badge" aria-hidden="true"><img src="icons/clock.png" alt=""></span>
+        <h3>Öppettider</h3>
+        <p>Mån–Tors: 10:00–20:00</p>
+        <p>Fre–Lör: 10:30–21:00</p>
+        <p>Sön: 12:00–20:00</p>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <h2>Hitta oss</h2>
+      <div class="map-card">
+        <div id="map" aria-label="Karta till Tre Kronor Pizzeria"></div>
+        <a class="map-cta" href="https://www.google.com/maps?q=tre+kronor+pizza+v%C3%A4nn%C3%A4s" target="_blank" rel="noopener">Öppna i Kartor</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <h2 class="footer-title">Beställa / Kontakt</h2>
+      <div class="footer-grid">
+        <div class="footer-card">
+          <span class="icon-badge" aria-hidden="true"><img src="icons/clock.png" alt=""></span>
+          <h3>Öppettider</h3>
+          <p>Mån–Tors: 10:00–20:00</p>
+          <p>Fre–Lör: 10:30–21:00</p>
+          <p>Sön: 12:00–20:00</p>
+        </div>
+        <div class="footer-card">
+          <span class="icon-badge" aria-hidden="true"><img src="icons/telephone.png" alt=""></span>
+          <h3>Beställ</h3>
+          <p><a href="tel:093512335">093-51 23 35</a></p>
+        </div>
+        <div class="footer-card">
+          <span class="icon-badge" aria-hidden="true"><img src="icons/adress.png" alt=""></span>
+          <h3>Adress</h3>
+          <p><a href="https://www.google.com/maps?q=tre+kronor+pizza+v%C3%A4nn%C3%A4s" target="_blank" rel="noopener">Östra Järnvägsgatan 3A</a></p>
+          <p>911 32 Vännäs</p>
+        </div>
+      </div>
+      <div class="footer-bottom">© <span data-year>2025</span> Pizzeria Tre Kronor · Vännäs</div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/contacts.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

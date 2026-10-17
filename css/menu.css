@@ -1,0 +1,436 @@
+/* ==========================================================================
+   Tre Kronor Pizzeria — menu page
+   Hero slider, category chips, menu sections & cards
+   ========================================================================== */
+
+.menu-main {
+  padding-top: var(--header-h);
+}
+
+/* ---------- Hero slider ---------- */
+
+.menu-hero {
+  padding: 2rem 0 1rem;
+}
+
+.menu-hero .swiper {
+  width: min(1120px, 100% - 2.5rem);
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+}
+
+.menu-slide {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 3rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-slide .slide-eyebrow {
+  display: inline-block;
+  margin: 0 0 0.6rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.menu-slide h3 {
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  margin-bottom: 0.4rem;
+}
+
+.menu-slide .slide-price {
+  color: var(--accent-dark);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  margin-bottom: 1.25rem;
+}
+
+.menu-slide .slide-allergy {
+  font-size: clamp(1.15rem, 2.8vw, 1.6rem);
+  line-height: 1.5;
+  color: #b3341f;
+}
+
+.menu-slide .slide-media img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.menu-hero .swiper-pagination {
+  position: static;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-hero .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #e3cfa9;
+  opacity: 1;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.menu-hero .swiper-pagination-bullet-active {
+  background: var(--accent);
+  transform: scale(1.25);
+}
+
+/* ---------- Category chips bar ---------- */
+
+.chips-bar {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 90;
+  background: rgba(255, 249, 243, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  padding: 0.75rem 0;
+}
+
+.chips-inner {
+  position: relative;
+  width: min(1120px, 100% - 2.5rem);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chips-scroll {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0.25rem;
+  flex: 1;
+}
+
+.chips-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.chip img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.chip:hover {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.chip.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+}
+
+.chip-arrow {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.chip-arrow:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.chip-arrow[hidden] {
+  display: none;
+}
+
+.chips-hint {
+  display: none;
+}
+
+/* ---------- Menu sections ---------- */
+
+.menu-heading {
+  text-align: center;
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  margin: 3.5rem 0 0.5rem;
+}
+
+.menu-heading::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 0.9rem auto 0;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.category-note {
+  width: fit-content;
+  max-width: min(680px, 100% - 2.5rem);
+  margin: 1.4rem auto 0;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.menu-section {
+  width: min(1120px, 100% - 2.5rem);
+  margin: 2.75rem auto 0;
+  scroll-margin-top: calc(var(--header-h) + 76px);
+}
+
+#menu-root > .menu-section:first-child {
+  margin-top: 1.25rem;
+}
+
+.menu-section[hidden] {
+  display: none;
+}
+
+.section-title {
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+  gap: 1.4rem;
+}
+
+/* ---------- Menu item card ---------- */
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.menu-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--accent-soft);
+}
+
+.menu-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.15rem 1.25rem 1.3rem;
+  flex: 1;
+}
+
+.menu-card h3 {
+  font-size: 1.15rem;
+}
+
+.menu-card .ingredients {
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  min-height: 2.6em;
+}
+
+.price-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+.price-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.price-chip .size {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.price-single {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+/* ---------- Filtering animation ---------- */
+
+.menu-section.is-filtering .menu-card {
+  animation: card-in 0.35s ease both;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 700px) {
+  .menu-slide {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-slide .slide-media {
+    order: -1;
+  }
+
+  .menu-slide .slide-media img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .chip-arrow {
+    display: none;
+  }
+
+  .chips-hint {
+    display: block;
+    width: fit-content;
+    margin: 0.45rem auto -0.2rem;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    transition: opacity 0.4s ease;
+  }
+
+  .chips-hint.is-dismissed {
+    opacity: 0;
+  }
+
+  .chips-hint[hidden] {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .menu-card {
+    flex-direction: row;
+  }
+
+  .menu-card img {
+    width: 100px;
+    flex: none;
+    align-self: center;
+    aspect-ratio: 1;
+    margin-left: 0.75rem;
+    border-radius: var(--radius);
+  }
+
+  .menu-card-body {
+    padding: 0.85rem;
+    gap: 0.35rem;
+  }
+
+  .menu-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .menu-card .ingredients {
+    min-height: 0;
+    font-size: 0.88rem;
+  }
+
+  .price-chip {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .price-single {
+    font-size: 1.05rem;
+  }
+}
