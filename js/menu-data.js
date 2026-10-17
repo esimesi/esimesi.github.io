@@ -319,7 +319,7 @@ const MENU = {
       title: 'Grill',
       items: [
         { name: 'Falafeltallrik', desc: 'falafel, pommes, sallad, dressing', img: 'pictures/talrik.png', price: 135 },
-        { name: 'Kycklingtallrik', desc: 'kyckling, pommes, sallad, bearnaisesås', img: 'pictures/talrik.png', price: 135 },
+        { name: 'Kycklingtallrik', desc: 'kyckling, pommes, sallad, vitlökssås, kebabsås', img: 'pictures/talrik.png', price: 135 },
         { name: 'Mixtallrik', desc: 'kyckling, kebab, pommes, sallad, vitlökssås, kebabsås', img: 'pictures/talrik.png', price: 135 },
         { name: 'Oxfilétallrik', desc: 'oxfile, pommes, sallad, bearnaisesås', img: 'pictures/talrik.png', price: 149 },
         { name: 'Lövbit', desc: 'pommes, sallad, bearnaisesås, persiljesmör', img: 'pictures/grill.png', price: 135 },
